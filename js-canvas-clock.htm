@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body onload="clock()">
+
+<canvas id="myCanvas" width="300" height="300" style="/*border:1px solid #d3d3d3;*/">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+function clock()
+{
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+
+ctx.clearRect(0,0,300,300);
+
+ctx.beginPath();
+ctx.lineWidth=10;
+ctx.arc(150,150,145,0,2*Math.PI);
+ctx.fillStyle="rgb(255,200,70)";
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.lineWidth=1;
+ctx.arc(150,150,7,0,2*Math.PI);
+ctx.fillStyle="#000000";
+ctx.fill();
+ctx.stroke();
+
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+var ms=today.getMilliseconds();
+/*
+ctx.beginPath();
+msx = ms/1000*2;
+ctx.arc(150,150,140,(1.5+msx)*Math.PI,(1.5+msx)*Math.PI);
+ctx.strokeStyle="#F00";
+ctx.lineTo(150,150);
+ctx.stroke();
+*/
+ctx.beginPath();
+//ctx.globalAlpha=1;
+sx = s/60*2+ms/30000;
+//sx = s/60*2;
+ctx.arc(150,150,130,(1.5+sx)*Math.PI,(1.5+sx)*Math.PI);
+ctx.strokeStyle="#000";
+ctx.lineTo(150,150);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.lineWidth=5;
+ctx.lineCap="round";
+mx = m/60*2+s/1800;
+//mx = m/60*2;
+ctx.arc(150,150,120,(1.5+mx)*Math.PI,(1.5+mx)*Math.PI);
+ctx.lineTo(150,150);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.lineWidth=7;
+hx = h/12*2+m/360;
+ctx.arc(150,150,90,(1.5+hx)*Math.PI,(1.5+hx)*Math.PI);
+ctx.lineTo(150,150);
+ctx.stroke();
+
+ut=setTimeout('clock()',1)
+}
+</script> 
+</body>
+</html>
