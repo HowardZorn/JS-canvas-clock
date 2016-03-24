@@ -29,20 +29,20 @@ ctx.fillStyle="#000000";
 ctx.fill();
 ctx.stroke();
 
-ctx.beginPath();
 ctx.lineWidth=1;
 do {
+ctx.beginPath();
 ctx.translate(150,150);
 ctx.rotate(1/6*Math.PI);
-//ctx.arc(130,0,5,0,2*Math.PI);
-ctx.rect(127,-1,6,2)
+ctx.arc(130,0,2,0,2*Math.PI);
+//ctx.rect(127,-1,6,2)
 ctx.fillStyle="#000000";
 ctx.fill();
+ctx.stroke();
 i += 1/6;
 ctx.translate(-150,-150);
 }
 while (i<2)
-ctx.stroke();
 
 var today=new Date();
 var h=today.getHours();
