@@ -57,6 +57,8 @@ sx = s/60*2+ms/30000;
 ctx.arc(150,150,130,(1.5+sx)*Math.PI,(1.5+sx)*Math.PI);
 ctx.strokeStyle="#000";
 ctx.lineTo(150,150);
+ctx.arc(150,150,20,(2.5+sx)*Math.PI,(2.5+sx)*Math.PI);
+ctx.lineTo(150,150);
 ctx.stroke();
 
 ctx.beginPath();
@@ -65,12 +67,16 @@ ctx.lineCap="round";
 mx = m/60*2+s/1800;
 ctx.arc(150,150,120,(1.5+mx)*Math.PI,(1.5+mx)*Math.PI);
 ctx.lineTo(150,150);
+ctx.arc(150,150,15,(2.5+mx)*Math.PI,(2.5+mx)*Math.PI);
+ctx.lineTo(150,150);
 ctx.stroke();
 
 ctx.beginPath();
 ctx.lineWidth=7;
 hx = h/12*2+m/360;
 ctx.arc(150,150,90,(1.5+hx)*Math.PI,(1.5+hx)*Math.PI);
+ctx.lineTo(150,150);
+ctx.arc(150,150,15,(2.5+hx)*Math.PI,(2.5+hx)*Math.PI);
 ctx.lineTo(150,150);
 ctx.stroke();
 
